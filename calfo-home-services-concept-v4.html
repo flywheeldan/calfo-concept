@@ -203,14 +203,15 @@
     position: relative;
   }
   .logo {
-    font-family: var(--font-display);
-    font-size: var(--text-xl);
-    font-weight: 700;
-    color: var(--color-primary);
-    letter-spacing: var(--tracking-tight);
-    transition: font-size 0.15s ease;
+    display: flex;
+    align-items: center;
   }
-  .logo span { color: var(--color-secondary); }
+  .logo img {
+    height: 44px;
+    width: auto;
+    display: block;
+    transition: height 0.15s ease;
+  }
   .nav-links {
     display: flex;
     align-items: center;
@@ -244,7 +245,7 @@
   /* Mobile: CTA moves inside the hamburger dropdown, phone collapses to icon-only,
      freeing horizontal space so the logo can expand. */
   @media (max-width: 900px) {
-    .logo { font-size: var(--text-2xl); }
+    .logo img { height: 52px; }
     .nav-links {
       display: none;
       position: absolute;
@@ -519,7 +520,7 @@
 
 <header>
   <nav>
-    <div class="logo">Calfo <span>Home Services</span></div>
+    <a class="logo" href="#"><img src="calfo-logo-transparent.png" alt="Calfo Home Services"></a>
     <ul class="nav-links" id="mobile-nav">
       <li><a href="#services">Cooling</a></li>
       <li><a href="#services">Heating</a></li>
